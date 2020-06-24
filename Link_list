@@ -1,0 +1,72 @@
+#include<stdio.h>
+#include<conio.h>
+struct node
+{
+    int data;
+    struct node*link;
+};
+struct node*head=NULL;
+struct node*creatnode()
+{
+    struct node*t;
+    t=(struct node*)malloc(sizeof(struct node));
+    return(t);
+}
+void insertnode(int value)
+{
+   struct node*p,*temp;
+   temp=creatnode();
+   temp->data=value;
+   temp->link=NULL;
+   if(head==NULL)
+   head=temp;
+   else
+   {
+       p=head;
+       while(p->link!=NULL)
+       p=p->link;
+       p->link=temp;
+   }
+}
+void view()
+{
+    struct node*r;
+    if(head==NULL)
+    printf("\n link list is empty");
+    else
+    {r=head;
+    while(r!=NULL)
+    {
+        printf("%d ",r->data);
+        r=r->link;
+    }
+    }
+}
+int main()
+{ 
+    int choice,data;
+    struct node*head;
+    while(1)
+    {
+    printf("1.insertnode");
+    printf("\n2.view linklist");
+    printf("\n3.exit");
+    printf("\nEnter your choice");
+    scanf("%d",&choice);
+    switch(choice)
+    {
+        case 1:
+        printf("enter the data");
+        scanf("%d",&data);
+        insertnode(data);break;
+        case 2:
+        view();break;
+        case 3:exit(0);break;
+        default:printf("\nenter valid choice");break;
+    }
+    }
+    
+}
+
+
+
