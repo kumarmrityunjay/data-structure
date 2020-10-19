@@ -12,6 +12,7 @@ struct node*creatnode()
     t=(struct node*)malloc(sizeof(struct node));
     return(t);
 }
+//function to inser a node................
 void insertnode(int value)
 {
    struct node*p,*temp;
