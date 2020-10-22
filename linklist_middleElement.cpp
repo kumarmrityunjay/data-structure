@@ -8,6 +8,7 @@ int getMiddle(Node *head)
        p=p->next;
        count=count+1;
    }
+   //middle
       int mid;
        mid=1+count/2;
   p=head;
