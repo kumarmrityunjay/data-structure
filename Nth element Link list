@@ -1,0 +1,20 @@
+int getNthFromLast(Node *head, int n)
+{
+      int i,count=0;
+      Node *check=head;
+      while(check!=NULL){
+         
+        check=check->next;
+        count=count+1;
+     }
+     int p=count-n;
+     check=head;
+     if(n<=count){
+     for(i=0;i<p;i++){
+         check=check->next;
+     }
+    
+    return(check->data);
+     }
+    return -1;
+}
