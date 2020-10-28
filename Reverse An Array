@@ -1,0 +1,21 @@
+#include <stdio.h>
+
+int main() {
+	int l,n,i,p;
+	scanf("%d\n",&l);
+	scanf("%d\n",&n);
+	p=n;
+	int array[n];
+	int b[n];
+	for(i=0;i<n;i++){
+	    scanf("%d",&array[i]);
+	    }
+	for(i=0;i<n;i++){
+	    b[i]=array[p-1];
+	    p--;
+	}
+	for(i=0;i<n;i++)
+	printf("%d ",b[i]);
+	    
+	return 0;
+}
