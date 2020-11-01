@@ -1,0 +1,68 @@
+Node* sortedMerge(Node* head_A, Node* head_B)  
+   {  
+    Node *temp1=head_A;
+  /*  Node *temp2=head_B;
+    Node *ad1;
+    Node *ad2;
+    Node *roo1;
+    Node *root2;*/
+    //temp1=head_A;
+    Node *temp;
+    if(temp1->data>head_B->data){
+        
+        head_A=head_B;
+        head_B=head_B->bottom;
+        head_A->bottom=temp1;
+        temp1=head_A;
+    }
+
+    
+    while(1){
+        if(head_B==NULL)
+        {
+         return(head_A);
+        }
+         else if(temp1->bottom==NULL)
+         {
+            temp1->bottom=head_B;
+            return(head_A);
+         }
+        else
+        {
+         if(temp1->bottom->data >head_B->data)
+         {
+           // head_A=head_B;
+           temp=temp1->bottom;
+           temp1->bottom=head_B;
+           
+            head_B=head_B->bottom;
+            
+            temp1->bottom->bottom=temp;
+            //temp1=temp1->next;
+        
+          }
+          else temp1=temp1->bottom;
+        }
+    }
+
+}  
+    
+    
+Node *flatten(Node *root)
+{
+    Node *travers;
+    Node *temp1=root;
+    Node *temp2=root->next;
+   // Node *temp3=root->next->next;
+    do{
+        travers=temp2->next;
+    temp1=sortedMerge(temp1,temp2);
+
+    temp2=travers;
+    
+    }while(travers!=NULL);
+    
+    return(temp1);
+   }
+    
+
