@@ -1,0 +1,31 @@
+
+#include <stdio.h>
+
+int main()
+{
+    int n,i,p,b;
+    int product=1;
+    printf("Enter a number:\n");
+    scanf("%d",&n);
+    for(i=10;i<10000;i++){
+        int a=i;
+        int p=i;
+        while(a){
+            int b=a%10;
+            product=b*product;
+            a=a/10;
+         }
+    if(n==product){
+        printf("possible\n");
+        printf("%d",p);
+        break;
+        }
+    product=1;    
+  }
+  if(n!=product){
+      printf("Not possible\n");
+      printf("%d",p);
+  }
+
+    
+}
